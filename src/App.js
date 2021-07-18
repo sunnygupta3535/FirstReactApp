@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const FirstReactApp = () => {
+
+    let [mycolor, setMycolor] = useState("pink")
+
+    return (
+        <div className="container" style={{ background: mycolor }}>
+            <h1 style={{ textAlign: "center" }}> Hello World </h1>
+            <button
+                className="button"
+                style={{background : "linear-gradient(to bottom right, red, green)"}}
+                onClick={() => { setMycolor("linear-gradient(to bottom right, red, green)") }}>
+                Apple</button>
+            <button
+                className="button"
+                style={{background : "linear-gradient(to bottom right, lightgreen, green)"}}
+                onClick={() => { setMycolor("linear-gradient(to bottom right, lightgreen, green)") }}>
+                Grapes</button>
+            <button
+                className="button"
+                style={{background : "linear-gradient(to bottom right, orange, yellow, green)"}}
+                onClick={() => { setMycolor("linear-gradient(to bottom right, red, yellow, green)") }}>
+                Mango</button>
+        </div>
+    )
 }
 
-export default App;
+export default FirstReactApp
